@@ -1,0 +1,39 @@
+{
+  "name": "electron-uikit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "UI kit for Electron. e.g. titlebar, contextmenu, notification, etc.",
+  "license": "MIT",
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "format": "prettier --write .",
+    "lint": "eslint --ext .ts packages/*/src/**",
+    "typecheck": "tsc --noEmit",
+    "build:core": "pnpm run -C packages/core build"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^18.19.34",
+    "@typescript-eslint/eslint-plugin": "^7.12.0",
+    "@typescript-eslint/parser": "^7.12.0",
+    "electron": "^30.1.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.1",
+    "rollup": "^4.18.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-rm": "^1.0.2",
+    "typescript": "^5.4.5"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "electron"
+      ]
+    }
+  }
+}
