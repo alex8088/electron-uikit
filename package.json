@@ -10,6 +10,8 @@
     "format": "prettier --write .",
     "lint": "eslint --ext .ts packages/*/src/**",
     "typecheck": "tsc --noEmit",
+    "play": "pnpm run -C packages/playground dev",
+    "play:preload": "pnpm run -C packages/playground dev:preload",
     "build:core": "pnpm run -C packages/core build",
     "build:titlebar": "pnpm run -C packages/titlebar build"
   },

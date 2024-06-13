@@ -1,0 +1,106 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Electron UIKit</title>
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:"
+    />
+    <script type="module">
+      import '@electron-uikit/titlebar/renderer'
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      :root {
+        --theme-color-transition: color 0.4s, background-color 0.4s;
+      }
+
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        transition: var(--theme-color-transition);
+      }
+
+      .text {
+        background: -webkit-linear-gradient(315deg, #ee7a3b 15%, #42b883);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+        font-size: 48px;
+      }
+
+      #app {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        padding-bottom: 32px;
+      }
+
+      .titlebar {
+        height: 32px;
+        transition: var(--theme-color-transition);
+      }
+
+      .icon {
+        height: 13px;
+        width: 13px;
+        background-color: #333;
+        mask-position: 50% 50%;
+        mask-repeat: no-repeat;
+        mask-size: 100%;
+      }
+
+      .icon-sun {
+        mask-image: url(/sun.svg);
+      }
+
+      .icon-moon {
+        mask-image: url(/moon.svg);
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #1f1f1f;
+          color: #ededed;
+        }
+
+        .text {
+          background: -webkit-linear-gradient(315deg, #42b883 45%, #ee7a3b);
+          background-clip: text;
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .icon {
+          background-color: #efefef;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <title-bar windowtitle="Electron UIKit" supportfullscreen class="titlebar">
+      <div id="pin" class="window__control">
+        <i id="icon" class="icon icon-sun"></i>
+      </div>
+      <div>display none</div>
+    </title-bar>
+    <div id="app">
+      <span class="text">Electron UIKit<sup>+</sup></span>
+    </div>
+    <script type="module" src="./src/index.ts"></script>
+  </body>
+</html>
