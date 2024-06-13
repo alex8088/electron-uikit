@@ -39,6 +39,24 @@
     "dist",
     "globals.d.ts"
   ],
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/electron-uikit.git",
+    "directory": "packages/core"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/electron-uikit/issues"
+  },
+  "homepage": "https://github.com/alex8088/electron-uikit/tree/master/packages/core#readme",
+  "keywords": [
+    "electron",
+    "ui",
+    "titlebar",
+    "contextmenu",
+    "notification"
+  ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin typescript"
   },
