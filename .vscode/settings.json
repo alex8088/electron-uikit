@@ -9,7 +9,5 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "html.customData": [
-    "./packages/titlebar/custom-elements.json"
-  ]
+  "html.customData": ["./packages/titlebar/custom-elements.json"]
 }
