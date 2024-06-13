@@ -10,7 +10,8 @@
     "format": "prettier --write .",
     "lint": "eslint --ext .ts packages/*/src/**",
     "typecheck": "tsc --noEmit",
-    "build:core": "pnpm run -C packages/core build"
+    "build:core": "pnpm run -C packages/core build",
+    "build:titlebar": "pnpm run -C packages/titlebar build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",

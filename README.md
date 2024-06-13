@@ -9,9 +9,10 @@
 
 ## Packages
 
-| Package                               | Description          | Version |
-| ------------------------------------- | :------------------- | :------ |
-| [@electron-uikit/core](packages/core) | Electron UI kit core |         |
+| Package                                       | Description             | Version |
+| --------------------------------------------- | :---------------------- | :------ |
+| [@electron-uikit/core](packages/core)         | Electron UI kit core    |         |
+| [@electron-uikit/titlebar](packages/titlebar) | Title bar web component |         |
 
 ## License
 

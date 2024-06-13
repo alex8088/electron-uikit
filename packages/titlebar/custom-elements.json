@@ -1,0 +1,41 @@
+{
+  "version": 1.1,
+  "tags": [
+    {
+      "name": "title-bar",
+      "description": "Title bar web component for Electron. Example:\n```html\n<title-bar windowtitle='Electron UIKit'></title-bar>\n```",
+      "references": [
+        {
+          "name": "Electron UIKit Reference",
+          "url": "https://github.com/alex8088/electron-uikit"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "windowtitle",
+          "description": "Window title."
+        },
+        {
+          "name": "overlay",
+          "description": "Set window controls overlay."
+        },
+        {
+          "name": "nominimize",
+          "description": "If specified, the title bar will not show the minimization control."
+        },
+        {
+          "name": "nomaximize",
+          "description": "If specified, the title bar will not show the nomaximization control."
+        },
+        {
+          "name": "noclose",
+          "description": "If specified, the title bar will not show the `x` control."
+        },
+        {
+          "name": "supportfullscreen",
+          "description": "Support fullscreen window mode."
+        }
+      ]
+    }
+  ]
+}

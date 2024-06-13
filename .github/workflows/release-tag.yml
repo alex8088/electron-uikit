@@ -2,6 +2,7 @@ on:
   push:
     tags:
       - 'core*'
+      - 'titlebar*'
 
 name: Create Release
 
