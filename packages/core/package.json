@@ -20,6 +20,9 @@
       "types": "./dist/preload.d.ts",
       "import": "./dist/preload.mjs",
       "require": "./dist/preload.cjs"
+    },
+    "./globals": {
+      "types": "./globals.d.ts"
     }
   },
   "typesVersions": {
@@ -33,7 +36,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "globals.d.ts"
   ],
   "scripts": {
     "build": "rollup -c rollup.config.ts --configPlugin typescript"
