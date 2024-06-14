@@ -3,6 +3,7 @@ on:
     tags:
       - 'core*'
       - 'titlebar*'
+      - 'contextmenu*'
 
 name: Create Release
 

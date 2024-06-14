@@ -54,6 +54,12 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5
 
+  packages/contextmenu:
+    devDependencies:
+      '@electron-uikit/core':
+        specifier: workspace:^
+        version: link:../core
+
   packages/core:
     devDependencies:
       '@electron-toolkit/preload':

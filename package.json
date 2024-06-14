@@ -13,6 +13,7 @@
     "play": "pnpm run -C packages/playground dev",
     "play:preload": "pnpm run -C packages/playground dev:preload",
     "build:core": "pnpm run -C packages/core build",
+    "build:contextmenu": "pnpm run -C packages/contextmenu build",
     "build:titlebar": "pnpm run -C packages/titlebar build"
   },
   "devDependencies": {

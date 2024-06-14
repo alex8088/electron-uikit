@@ -1,0 +1,67 @@
+{
+  "name": "@electron-uikit/contextmenu",
+  "version": "0.0.0",
+  "description": "Context menu for Electron app.",
+  "main": "dist/main.cjs",
+  "module": "dist/main.mjs",
+  "types": "dist/main.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs"
+    },
+    "./main": {
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.mjs",
+      "require": "./dist/main.cjs"
+    },
+    "./renderer": {
+      "types": "./dist/renderer.d.ts",
+      "import": "./dist/renderer.mjs"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "main": [
+        "./dist/main.d.ts"
+      ],
+      "renderer": [
+        "./dist/renderer.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "author": "Alex Wei<https://github.com/alex8088>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alex8088/electron-uikit.git",
+    "directory": "packages/contextmenu"
+  },
+  "bugs": {
+    "url": "https://github.com/alex8088/electron-uikit/issues"
+  },
+  "homepage": "https://github.com/alex8088/electron-uikit/tree/master/packages/contextmenu#readme",
+  "keywords": [
+    "electron",
+    "contextmenu"
+  ],
+  "scripts": {
+    "build": "rollup -c rollup.config.ts --configPlugin typescript"
+  },
+  "peerDependencies": {
+    "@electron-uikit/core": "*",
+    "electron": ">=15.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@electron-uikit/core": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@electron-uikit/core": "workspace:^"
+  }
+}
