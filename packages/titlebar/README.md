@@ -47,6 +47,7 @@ npm i @electron-uikit/core @electron-uikit/titlebar
 2. Register a listener and attach a title bar to the window in the main process, so that you can use it in the renderer process.
 
    ```js
+   import { app, BrowserWindow } from 'electron'
    import {
      registerTitleBarListener,
      attachTitleBarToWindow
