@@ -2,7 +2,7 @@
 
 ![titlebar version](https://img.shields.io/npm/v/@electron-uikit/titlebar.svg?color=orange&label=version)
 
-Title bar web component for Electron.
+Title bar web component for Electron app.
 
 The title bar web component is used to simulate the Windows title bar for better customization. It's very easy to use and get the same experience as a native title bar. Fully compatible with Windows, MacOS and Linux.
 
