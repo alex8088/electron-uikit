@@ -2,6 +2,7 @@ import { app, BrowserWindow, ipcMain, nativeTheme } from 'electron'
 import { join } from 'path'
 
 import { useUIKit } from '@electron-uikit/core'
+import { registerContextMenuListener } from '@electron-uikit/contextmenu'
 import {
   registerTitleBarListener,
   attachTitleBarToWindow
@@ -54,6 +55,7 @@ app.whenReady().then(() => {
   }
 
   registerTitleBarListener()
+  registerContextMenuListener()
 
   createWindow()
 

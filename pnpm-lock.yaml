@@ -68,6 +68,9 @@ importers:
 
   packages/playground:
     dependencies:
+      '@electron-uikit/contextmenu':
+        specifier: workspace:^
+        version: link:../contextmenu
       '@electron-uikit/core':
         specifier: workspace:^
         version: link:../core

@@ -8,6 +8,7 @@
     "dev:preload": "electron-vite dev -c electron.vite.config.preload.ts --mode preload"
   },
   "dependencies": {
+    "@electron-uikit/contextmenu": "workspace:^",
     "@electron-uikit/core": "workspace:^",
     "@electron-uikit/titlebar": "workspace:^"
   },
