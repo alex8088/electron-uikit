@@ -1,6 +1,6 @@
 # @electron-uikit/contextmenu
 
-![titlebar version](https://img.shields.io/npm/v/@electron-uikit/contextmenu.svg?color=orange&label=version)
+![contextmenu version](https://img.shields.io/npm/v/@electron-uikit/contextmenu.svg?color=orange&label=version)
 
 Context menu for Electron app. Inspired by VS Code.
 
