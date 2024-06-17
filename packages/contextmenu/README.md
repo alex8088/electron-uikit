@@ -16,6 +16,8 @@ You can easily use the context menu in the renderer process and use the same way
 npm i @electron-uikit/core @electron-uikit/contextmenu
 ```
 
+### Get Started
+
 1. Exposes the UI Kit APIs for components. See [@electron-uikit/core](https://github.com/alex8088/electron-uikit/tree/main/packages/core) guide for more details.
 
    You can expose it in the specified preload script:
