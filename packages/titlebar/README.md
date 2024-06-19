@@ -6,6 +6,14 @@ Title bar web component for Electron app.
 
 The title bar web component is used to simulate the Windows title bar for better customization. It's very easy to use and get the same experience as a native title bar. Fully compatible with Windows, MacOS and Linux.
 
+<p align='center'>
+  <img src='./screenshots/win32-dark.png' width='580' />
+</p>
+
+<p align='center'>
+  <img src='./screenshots/mac-light.png' width='662' />
+</p>
+
 ## Features
 
 - Customization
