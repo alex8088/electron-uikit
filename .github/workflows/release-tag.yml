@@ -4,6 +4,7 @@ on:
       - 'core*'
       - 'titlebar*'
       - 'contextmenu*'
+      - 'notification*'
 
 name: Create Release
 

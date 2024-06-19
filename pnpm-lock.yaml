@@ -66,6 +66,16 @@ importers:
         specifier: ^3.0.1
         version: 3.0.1(electron@31.0.1)
 
+  packages/notification:
+    dependencies:
+      '@tiny-libs/typed-event-emitter':
+        specifier: ^1.0.0
+        version: 1.0.0
+    devDependencies:
+      '@electron-uikit/core':
+        specifier: workspace:^
+        version: link:../core
+
   packages/playground:
     dependencies:
       '@electron-uikit/contextmenu':
@@ -74,6 +84,9 @@ importers:
       '@electron-uikit/core':
         specifier: workspace:^
         version: link:../core
+      '@electron-uikit/notification':
+        specifier: workspace:^
+        version: link:../notification
       '@electron-uikit/titlebar':
         specifier: workspace:^
         version: link:../titlebar
@@ -1101,6 +1114,10 @@ packages:
     dependencies:
       defer-to-connect: 2.0.1
     dev: true
+
+  /@tiny-libs/typed-event-emitter@1.0.0:
+    resolution: {integrity: sha512-6Sicix/7j8o5SufkzCvUbcA0Y4IfyJZqqhqYc//c4bDpkw5XY1xwYIoY8m+6oW4b+CFjBs593aFBbKlnBiXZRQ==}
+    dev: false
 
   /@types/cacheable-request@6.0.3:
     resolution: {integrity: sha512-IQ3EbTzGxIigb1I3qPZc1rWJnH0BmSKv5QYTalEwweFvyBDLSAe24zP0le/hyi7ecGfZVlIVAg4BZqb8WBwKqw==}

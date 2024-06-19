@@ -1,4 +1,5 @@
 import { Menu, MenuItem } from '@electron-uikit/contextmenu/renderer'
+import { notification } from '@electron-uikit/notification/renderer'
 
 function init(): void {
   window.addEventListener('DOMContentLoaded', () => {
@@ -23,9 +24,9 @@ function init(): void {
       const menu = new Menu()
       menu.append(
         new MenuItem({
-          label: 'Menu Item One',
+          label: 'Popup Notification',
           click: (): void => {
-            console.log('menu item one')
+            notification.show({ body: 'Gorgeous', extraData: { type: 1 } })
           }
         })
       )

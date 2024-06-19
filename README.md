@@ -9,11 +9,12 @@
 
 ## Packages
 
-| Package                                             | Description             | Version |
-| --------------------------------------------------- | :---------------------- | :------ |
-| [@electron-uikit/core](packages/core)               | Electron UI kit core    |         |
-| [@electron-uikit/contextmenu](packages/contextmenu) | Context menu            |         |
-| [@electron-uikit/titlebar](packages/titlebar)       | Title bar web component |         |
+| Package                                               | Description             | Version |
+| ----------------------------------------------------- | :---------------------- | :------ |
+| [@electron-uikit/core](packages/core)                 | Electron UI kit core    |         |
+| [@electron-uikit/contextmenu](packages/contextmenu)   | Context menu            |         |
+| [@electron-uikit/notification](packages/notification) | Notification            |         |
+| [@electron-uikit/titlebar](packages/titlebar)         | Title bar web component |         |
 
 ## License
 

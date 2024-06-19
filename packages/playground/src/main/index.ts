@@ -1,8 +1,12 @@
-import { app, BrowserWindow, ipcMain, nativeTheme } from 'electron'
+import { app, BrowserWindow, ipcMain, nativeTheme, shell } from 'electron'
 import { join } from 'path'
 
 import { useUIKit } from '@electron-uikit/core'
 import { registerContextMenuListener } from '@electron-uikit/contextmenu'
+import {
+  notification,
+  registerNotificationListener
+} from '@electron-uikit/notification'
 import {
   registerTitleBarListener,
   attachTitleBarToWindow
@@ -56,6 +60,19 @@ app.whenReady().then(() => {
 
   registerTitleBarListener()
   registerContextMenuListener()
+  registerNotificationListener()
+
+  notification.config({
+    title: 'Electron UIKit'
+  })
+
+  notification.on('click', (data) => {
+    if (data.type === 1) {
+      shell.openExternal(
+        'https://github.com/alex8088/electron-uikit/tree/main/packages/notification'
+      )
+    }
+  })
 
   createWindow()
 

@@ -10,6 +10,7 @@
   "dependencies": {
     "@electron-uikit/contextmenu": "workspace:^",
     "@electron-uikit/core": "workspace:^",
+    "@electron-uikit/notification": "workspace:^",
     "@electron-uikit/titlebar": "workspace:^"
   },
   "devDependencies": {
