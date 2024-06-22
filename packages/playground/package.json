@@ -5,7 +5,7 @@
   "main": "out/main/index.js",
   "scripts": {
     "dev": "electron-vite dev --ignoreConfigWarning",
-    "dev:preload": "electron-vite dev -c electron.vite.config.preload.ts --mode preload"
+    "dev:preload": "electron-vite dev --mode preload"
   },
   "dependencies": {
     "@electron-uikit/contextmenu": "workspace:^",
