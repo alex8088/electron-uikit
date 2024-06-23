@@ -11,10 +11,10 @@
 
 | Package                                               | Description             | Version |
 | ----------------------------------------------------- | :---------------------- | :------ |
-| [@electron-uikit/core](packages/core)                 | Electron UI kit core    |         |
-| [@electron-uikit/contextmenu](packages/contextmenu)   | Context menu            |         |
-| [@electron-uikit/notification](packages/notification) | Notification            |         |
-| [@electron-uikit/titlebar](packages/titlebar)         | Title bar web component |         |
+| [@electron-uikit/core](packages/core)                 | Electron UI kit core    | [![core version](https://img.shields.io/npm/v/@electron-uikit/core.svg?label=%20)](packages/core/CHANGELOG.md) |
+| [@electron-uikit/contextmenu](packages/contextmenu)   | Context menu            | [![contextmenu version](https://img.shields.io/npm/v/@electron-uikit/contextmenu.svg?label=%20)](packages/contextmenu/CHANGELOG.md) |
+| [@electron-uikit/notification](packages/notification) | Notification            | [![notification version](https://img.shields.io/npm/v/@electron-uikit/notification.svg?label=%20)](packages/notification/CHANGELOG.md) |
+| [@electron-uikit/titlebar](packages/titlebar)         | Title bar web component | [![titlebar version](https://img.shields.io/npm/v/@electron-uikit/titlebar.svg?label=%20)](packages/titlebar/CHANGELOG.md) |
 
 ## License
 
