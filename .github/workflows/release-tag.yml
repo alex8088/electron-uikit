@@ -29,4 +29,4 @@ jobs:
           tag_name: ${{ github.ref }}
           release_name: ${{ github.ref }}
           body: |
-            Please refer to [CHANGELOG.md](https://github.com/alex8088/electron-uilit/blob/${{ github.ref_name }}/packages/${{ steps.tag.outputs.pkgName }}/CHANGELOG.md) for details.
+            Please refer to [CHANGELOG.md](https://github.com/alex8088/electron-uikit/blob/${{ github.ref_name }}/packages/${{ steps.tag.outputs.pkgName }}/CHANGELOG.md) for details.
