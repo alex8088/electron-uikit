@@ -11,6 +11,7 @@ import {
   registerTitleBarListener,
   attachTitleBarToWindow
 } from '@electron-uikit/titlebar'
+import { Toast } from '@electron-uikit/toast'
 
 function createWindow(): void {
   const mainWindow = new BrowserWindow({
@@ -83,6 +84,15 @@ app.whenReady().then(() => {
       nativeTheme.themeSource = 'dark'
     }
     return nativeTheme.shouldUseDarkColors
+  })
+
+  ipcMain.on('toast:loading', (e) => {
+    const win = BrowserWindow.fromWebContents(e.sender)
+    if (win) {
+      const toast = new Toast(win)
+      const reply = toast.loading('Downloading')
+      setTimeout(() => reply.dismiss(), 3000)
+    }
   })
 
   app.on('activate', function () {

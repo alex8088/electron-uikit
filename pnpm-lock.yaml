@@ -90,6 +90,9 @@ importers:
       '@electron-uikit/titlebar':
         specifier: workspace:^
         version: link:../titlebar
+      '@electron-uikit/toast':
+        specifier: workspace:^
+        version: link:../toast
     devDependencies:
       electron-vite:
         specifier: ^2.2.0
@@ -99,6 +102,12 @@ importers:
         version: 5.3.0(@types/node@18.19.34)
 
   packages/titlebar:
+    devDependencies:
+      '@electron-uikit/core':
+        specifier: workspace:^
+        version: link:../core
+
+  packages/toast:
     devDependencies:
       '@electron-uikit/core':
         specifier: workspace:^

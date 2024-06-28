@@ -1,7 +1,12 @@
 import { Menu, MenuItem } from '@electron-uikit/contextmenu/renderer'
 import { notification } from '@electron-uikit/notification/renderer'
+import { toast } from '@electron-uikit/toast/renderer'
 
 function init(): void {
+  toast.config({
+    supportMain: true,
+    bottom: 80
+  })
   window.addEventListener('DOMContentLoaded', () => {
     const theme = document.getElementById('theme')
     const icon = document.getElementById('icon')
@@ -33,11 +38,26 @@ function init(): void {
       menu.append(new MenuItem({ type: 'separator' }))
       menu.append(
         new MenuItem({
-          type: 'checkbox',
-          label: 'Menu Item Two',
-          checked: true,
+          label: 'Show Text Toast',
           click: (): void => {
-            console.log('menu item two')
+            toast.text('I am toast', 4000)
+          }
+        })
+      )
+      menu.append(
+        new MenuItem({
+          label: 'Show Loading Toast',
+          click: (): void => {
+            const reply = toast.loading('Loading')
+            setTimeout(() => reply.success('Done'), 3000000)
+          }
+        })
+      )
+      menu.append(
+        new MenuItem({
+          label: 'Show Loading Toast (Main Process)',
+          click: (): void => {
+            window.uikit.ipcRenderer.send('toast:loading')
           }
         })
       )

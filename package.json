@@ -15,7 +15,8 @@
     "build:core": "pnpm run -C packages/core build",
     "build:contextmenu": "pnpm run -C packages/contextmenu build",
     "build:notification": "pnpm run -C packages/notification build",
-    "build:titlebar": "pnpm run -C packages/titlebar build"
+    "build:titlebar": "pnpm run -C packages/titlebar build",
+    "build:toast": "pnpm run -C packages/toast build"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^26.0.1",

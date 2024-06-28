@@ -11,7 +11,8 @@
     "@electron-uikit/contextmenu": "workspace:^",
     "@electron-uikit/core": "workspace:^",
     "@electron-uikit/notification": "workspace:^",
-    "@electron-uikit/titlebar": "workspace:^"
+    "@electron-uikit/titlebar": "workspace:^",
+    "@electron-uikit/toast": "workspace:^"
   },
   "devDependencies": {
     "electron-vite": "^2.2.0",
