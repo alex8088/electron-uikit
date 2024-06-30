@@ -1,6 +1,6 @@
 {
   "name": "@electron-uikit/toast",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Toast for Electron app.",
   "main": "dist/main.cjs",
   "module": "dist/main.mjs",
