@@ -148,6 +148,15 @@ const SHADOW_ROOT_CSS = `
 }
 `
 
+const OVERLAY_HOST_CSS = `
+:host {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 10000;
+}
+`
+
 export default class TitleBar extends HTMLElement {
   constructor() {
     super()
@@ -156,13 +165,13 @@ export default class TitleBar extends HTMLElement {
   connectedCallback(): void {
     const shadow = this.attachShadow({ mode: 'open' })
 
+    const overlay = this.hasAttribute('overlay')
+
     const style = document.createElement('style')
-    style.textContent = SHADOW_ROOT_CSS
+    style.textContent = SHADOW_ROOT_CSS + (overlay ? OVERLAY_HOST_CSS : '')
     shadow.appendChild(style)
 
     const isMacintosh = core.process.platform === 'darwin'
-
-    const overlay = this.hasAttribute('overlay')
 
     if (!overlay) {
       const el = document.createElement('div')
