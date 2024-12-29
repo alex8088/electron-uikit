@@ -162,6 +162,20 @@ export default class TitleBar extends HTMLElement {
     super()
   }
 
+  static get observedAttributes(): string[] {
+    return ['windowtitle']
+  }
+
+  attributeChangedCallback(
+    name: string,
+    oldValue: string,
+    newValue: string
+  ): void {
+    if (name === 'windowtitle' && oldValue !== newValue) {
+      this.updateTitle(newValue)
+    }
+  }
+
   connectedCallback(): void {
     const shadow = this.attachShadow({ mode: 'open' })
 
@@ -179,15 +193,8 @@ export default class TitleBar extends HTMLElement {
       shadow.appendChild(el)
 
       const title = this.getAttribute('windowtitle')
-
       if (title) {
-        const el = document.createElement('div')
-        el.classList.add('titlebar__title')
-        if (isMacintosh) {
-          el.classList.add('mac')
-        }
-        el.innerText = title
-        shadow.appendChild(el)
+        this.updateTitle(title)
       }
     }
 
@@ -297,6 +304,25 @@ export default class TitleBar extends HTMLElement {
           }
         }
       )
+    }
+  }
+
+  updateTitle(title: string): void {
+    const shadow = this.shadowRoot
+    if (shadow) {
+      let el = shadow.querySelector<HTMLElement>('.titlebar__title')
+      if (el) {
+        el.innerText = title
+      } else {
+        el = document.createElement('div')
+        el.classList.add('titlebar__title')
+        const isMacintosh = core.process.platform === 'darwin'
+        if (isMacintosh) {
+          el.classList.add('mac')
+        }
+        el.innerText = title
+        shadow.appendChild(el)
+      }
     }
   }
 }
