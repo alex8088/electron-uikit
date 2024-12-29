@@ -1,3 +1,7 @@
+### v1.2.0 (_2024-12-30_)
+
+- feat: handle updates to the windowtitle attribute
+
 ### v1.1.0 (_2024-08-11_)
 
 - fix: style for overlay mode
