@@ -22,13 +22,19 @@ export function useUIKit(
   session = _session.defaultSession,
   options: UIKitOptions = { esModule: false }
 ): void {
-  session.setPreloads([
-    ...session.getPreloads(),
-    fileURLToPath(
-      new URL(
-        options.esModule ? 'uikit-preload.mjs' : 'uikit-preload.cjs',
-        import.meta.url
-      )
+  const electronVer = process.versions.electron
+  const electronMajorVer = electronVer ? parseInt(electronVer.split('.')[0]) : 0
+
+  const preloadPath = fileURLToPath(
+    new URL(
+      options.esModule ? 'uikit-preload.mjs' : 'uikit-preload.cjs',
+      import.meta.url
     )
-  ])
+  )
+
+  if (electronMajorVer >= 35) {
+    session.registerPreloadScript({ type: 'frame', filePath: preloadPath })
+  } else {
+    session.setPreloads([...session.getPreloads(), preloadPath])
+  }
 }
