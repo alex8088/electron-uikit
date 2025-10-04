@@ -5,7 +5,7 @@ import {
   TITLE_BAR_FULLSCREEN_REPLY_CHANNEL
 } from './constants'
 
-const SHADOW_ROOT_CSS = `
+const BASE_CSS = `
 :host {
   position: relative;
   background-color: var(--tb-theme-color, #ffffff);
@@ -50,10 +50,6 @@ const SHADOW_ROOT_CSS = `
   font-weight: normal;
   color: var(--tb-title-text-color);
 }
-.titlebar__title.mac {
-  justify-content: center;
-  font-weight: 600;
-}
 .titlebar__window-controls {
   position: absolute;
   right: 0;
@@ -61,13 +57,6 @@ const SHADOW_ROOT_CSS = `
   z-index: 10000;
   display: flex;
   -webkit-app-region: no-drag;
-}
-.titlebar__window-controls.mac {
-  margin-top: var(--tb-control-margin);
-  margin-right: var(--tb-control-margin);
-}
-.titlebar__window-controls.mac ::slotted(.window__control) {
-  border-radius: var(--tb-control-radius);
 }
 .window__control, ::slotted(.window__control) {
   display: flex;
@@ -87,6 +76,9 @@ const SHADOW_ROOT_CSS = `
 .window__control:hover, ::slotted(.window__control:hover) {
   background-color: var(--tb-control-hover-color);
 }
+`
+
+const CONTROL_BUTTONS_CSS = `
 .window__control-min .window__control-icon:before {
   content: "";
   position: relative;
@@ -123,13 +115,6 @@ const SHADOW_ROOT_CSS = `
   border-bottom: 0;
   background: linear-gradient(to left, var(--tb-control-symbol-color) 1px, transparent 0) no-repeat bottom right / 1px 1px, linear-gradient(to left, var(--tb-control-symbol-color) 1px, transparent 0) no-repeat top left / 1px 1px;
 }
-.window__control-close:hover {
-  background-color: #F45454;
-}
-.window__control-close:hover .window__control-icon:before,
-.window__control-close:hover .window__control-icon:after {
-  background-color: #fff;
-}
 .window__control-close .window__control-icon:before,
 .window__control-close .window__control-icon:after {
   content: '';
@@ -145,6 +130,51 @@ const SHADOW_ROOT_CSS = `
 }
 .window__control-close .window__control-icon:after {
   transform: rotate(-45deg) translateZ(0);
+}
+`
+
+const WINDOWS_CSS = `
+.window__control-close:hover {
+  background-color: #F45454;
+}
+.window__control-close:hover .window__control-icon:before,
+.window__control-close:hover .window__control-icon:after {
+  background-color: #fff;
+}
+`
+
+const MAC_CSS = `
+.titlebar__title {
+  justify-content: center;
+  font-weight: 600;
+}
+.titlebar__window-controls {
+  margin-top: var(--tb-control-margin);
+  margin-right: var(--tb-control-margin);
+}
+.titlebar__window-controls ::slotted(.window__control) {
+  border-radius: var(--tb-control-radius);
+}
+`
+
+const LINUX_CSS = `
+.titlebar__window-controls {
+  margin: 2px 0;
+}
+.titlebar__window-controls .window__control,
+.titlebar__window-controls ::slotted(.window__control) {
+  width: 22px;
+  min-width: 22px;
+  height: 22px;
+  min-height: 22px;
+  margin: calc((var(--tb-control-height) - 26px)/2) calc((var(--tb-control-width) - 22px)/2);
+}
+.titlebar__window-controls .window__control {
+  border-radius: 50%;
+}
+.titlebar__window-controls ::slotted(.window__control) {
+  margin: calc((var(--tb-control-height) - 26px)/2) calc((var(--tb-control-width) - 22px)/2) !important;
+  border-radius: var(--tb-control-radius);
 }
 `
 
@@ -182,7 +212,7 @@ export default class TitleBar extends HTMLElement {
     const overlay = this.hasAttribute('overlay')
 
     const style = document.createElement('style')
-    style.textContent = SHADOW_ROOT_CSS + (overlay ? OVERLAY_HOST_CSS : '')
+    style.textContent = this.getShadowRootCSS(overlay)
     shadow.appendChild(style)
 
     const isMacintosh = core.process.platform === 'darwin'
@@ -201,10 +231,6 @@ export default class TitleBar extends HTMLElement {
     if (!isMacintosh || this.hasChildNodes()) {
       const controls = document.createElement('div')
       controls.classList.add('titlebar__window-controls')
-
-      if (isMacintosh) {
-        controls.classList.add('mac')
-      }
 
       controls.appendChild(document.createElement('slot'))
 
@@ -304,6 +330,18 @@ export default class TitleBar extends HTMLElement {
           }
         }
       )
+    }
+  }
+
+  getShadowRootCSS(overlay: boolean): string {
+    const OVERLAY_CSS = overlay ? OVERLAY_HOST_CSS : ''
+    switch (core.process.platform) {
+      case 'darwin':
+        return BASE_CSS + MAC_CSS + OVERLAY_CSS
+      case 'linux':
+        return BASE_CSS + CONTROL_BUTTONS_CSS + LINUX_CSS + OVERLAY_CSS
+      default:
+        return BASE_CSS + CONTROL_BUTTONS_CSS + WINDOWS_CSS + OVERLAY_CSS
     }
   }
 
