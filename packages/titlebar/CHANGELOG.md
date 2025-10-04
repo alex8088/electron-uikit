@@ -1,3 +1,7 @@
+### v1.3.0 (_2025-10-04_)
+
+- fix: Linux GUI style
+
 ### v1.2.0 (_2024-12-30_)
 
 - feat: handle updates to the windowtitle attribute
