@@ -1,6 +1,6 @@
 {
   "name": "@electron-uikit/titlebar",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Title bar web component for Electron app.",
   "main": "dist/main.cjs",
   "module": "dist/main.mjs",

@@ -1,3 +1,9 @@
+### v1.4.0 (_2025-10-08_)
+
+- feat: defaults to block element
+- fix: windowtitle should not be updated when the overlay attribute is present
+- fix: no need to add platform style identifier
+
 ### v1.3.0 (_2025-10-04_)
 
 - fix: Linux GUI style
