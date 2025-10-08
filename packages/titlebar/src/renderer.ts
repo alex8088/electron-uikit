@@ -354,10 +354,6 @@ export default class TitleBar extends HTMLElement {
       } else {
         el = document.createElement('div')
         el.classList.add('titlebar__title')
-        const isMacintosh = core.process.platform === 'darwin'
-        if (isMacintosh) {
-          el.classList.add('mac')
-        }
         el.innerText = title
         shadow.appendChild(el)
       }
