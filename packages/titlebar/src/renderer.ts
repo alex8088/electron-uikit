@@ -8,6 +8,7 @@ import {
 const BASE_CSS = `
 :host {
   position: relative;
+  display: block;
   background-color: var(--tb-theme-color, #ffffff);
   -webkit-user-select: none;
   --tb-title-text-color: #333333;
