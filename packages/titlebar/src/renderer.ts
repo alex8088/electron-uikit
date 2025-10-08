@@ -201,7 +201,11 @@ export default class TitleBar extends HTMLElement {
     oldValue: string,
     newValue: string
   ): void {
-    if (name === 'windowtitle' && oldValue !== newValue) {
+    if (
+      name === 'windowtitle' &&
+      oldValue !== newValue &&
+      !this.hasAttribute('overlay')
+    ) {
       this.updateTitle(newValue)
     }
   }
